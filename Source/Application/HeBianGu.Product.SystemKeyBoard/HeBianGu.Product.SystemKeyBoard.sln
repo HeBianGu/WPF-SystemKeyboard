@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Product.SystemKeyBoard", "HeBianGu.Product.SystemKeyBoard.csproj", "{C92D0A0E-E094-47A4-B734-9F3808AD19A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7E0B7AA-BBB2-4E40-A1B1-7413A8B5E8D5}
+	EndGlobalSection
+EndGlobal

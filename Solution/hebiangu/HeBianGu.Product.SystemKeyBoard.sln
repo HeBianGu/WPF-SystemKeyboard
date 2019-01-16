@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Product.SystemKeyBoard", "..\..\Source\Application\HeBianGu.Product.SystemKeyBoard\HeBianGu.Product.SystemKeyBoard.csproj", "{C92D0A0E-E094-47A4-B734-9F3808AD19A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{AF3ABB52-A9B5-4F28-AE24-35380C07A8BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControls", "UserControls", "{DF76A890-0851-4FFF-97EA-520270FE66B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Product.UserControls.SystemKeyBoard", "..\..\Source\UserControls\HeBianGu.Product.UserControls.SystemKeyBoard\HeBianGu.Product.UserControls.SystemKeyBoard.csproj", "{0CD00697-AB32-4506-ACDA-122C6F95F31C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C92D0A0E-E094-47A4-B734-9F3808AD19A3} = {AF3ABB52-A9B5-4F28-AE24-35380C07A8BD}
+		{0CD00697-AB32-4506-ACDA-122C6F95F31C} = {DF76A890-0851-4FFF-97EA-520270FE66B2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7E0B7AA-BBB2-4E40-A1B1-7413A8B5E8D5}
+	EndGlobalSection
+EndGlobal
