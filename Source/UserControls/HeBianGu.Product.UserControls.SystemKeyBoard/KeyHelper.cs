@@ -52,8 +52,6 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
         }
         #endregion
 
-       
-
         /// <summary> 模拟按下指定建 Keys.ControlKey </summary>
         public static void OnKeyPress(byte keyCode)
         {

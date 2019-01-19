@@ -65,25 +65,11 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
                 }
 
 
-                string tag = button.Tag.ToString();
-
-                //KeyHelper.GetFocus();
-
-                //this.txt_input.Focus();
-
-                //if(!KeyHelper.CodeToByte.ContainsKey(content))
-                // {
-                //     Debug.WriteLine("不存在指定字符的十进制数据："+ content);
-                //     return;
-                // }
-
-                //string code = KeyHelper.CodeToByte[content];
+                string tag = button.Tag.ToString(); 
 
                 byte b = Convert.ToByte(tag);
 
-                KeyHelper.OnKeyPress(b);
-
-                //KeyHelper.OnKeyPress(13);
+                KeyHelper.OnKeyPress(b); 
             }
         }
 
