@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeBianGu.Product.UserControls.SystemKeyBoard;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,16 @@ namespace HeBianGu.Product.SystemKeyBoard
         public ShellWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            KeyBoardWindow.ShowDefault();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            InputNumWindow.ShowDefault();
         }
     }
 }

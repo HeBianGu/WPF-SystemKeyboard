@@ -40,8 +40,13 @@
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
                                 Path=PressedBackground}" TargetName="border" />
-                            
                         </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                Path=PressedBackground}" TargetName="border" />
+                        </Trigger>
+
                     </ControlTemplate.Triggers>
 
                 </ControlTemplate>

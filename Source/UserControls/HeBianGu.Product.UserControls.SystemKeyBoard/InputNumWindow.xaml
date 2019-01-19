@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HeBianGu.Product.UserControls.SystemKeyBoard"
         mc:Ignorable="d" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen"
-        AllowsTransparency="True" MouseDown="Window_MouseDown"
-        Title="MainWindow" Width="400" Height="300">
+        AllowsTransparency="True" MouseDown="Window_MouseDown" Topmost="True"
+        Title="MainWindow" Width="400" Height="280">
     <Grid>
         <Viewbox>
-            <local:InputNumControl/>
+            <local:InputNumControl SumitClick="KeyBoardControl_SumitClick" 
+                                   CancelClick="KeyBoardControl_CancelClick"/>
         </Viewbox>
     </Grid>
 </Window>

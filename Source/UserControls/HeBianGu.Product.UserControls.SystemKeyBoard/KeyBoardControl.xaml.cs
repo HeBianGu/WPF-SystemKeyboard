@@ -83,7 +83,7 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
                 KeyHelper.OnKeyPress(b);
 
-                KeyHelper.OnKeyPress(13);
+                //KeyHelper.OnKeyPress(13);
             }
         }
 
@@ -213,8 +213,12 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
             btn.IsChecked = !btn.IsChecked;
 
-
             this.RefreshCaps();
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.OnCancelClick();
         }
     }
 

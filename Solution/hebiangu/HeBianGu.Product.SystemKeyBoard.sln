@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserControls", "UserControl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeBianGu.Product.UserControls.SystemKeyBoard", "..\..\Source\UserControls\HeBianGu.Product.UserControls.SystemKeyBoard\HeBianGu.Product.UserControls.SystemKeyBoard.csproj", "{0CD00697-AB32-4506-ACDA-122C6F95F31C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{0FB85295-9120-4239-A733-594134FBB946}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CD00697-AB32-4506-ACDA-122C6F95F31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB85295-9120-4239-A733-594134FBB946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB85295-9120-4239-A733-594134FBB946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB85295-9120-4239-A733-594134FBB946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB85295-9120-4239-A733-594134FBB946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

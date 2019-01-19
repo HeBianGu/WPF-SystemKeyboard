@@ -14,13 +14,6 @@ namespace HeBianGu.Product.SystemKeyBoard
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
-        {
-            KeyBoardWindow keyBoardWindow = new KeyBoardWindow();
-            keyBoardWindow.Show();
-
-            InputNumWindow inputNumWindow = new InputNumWindow();
-            inputNumWindow.Show();
-        }
+      
     }
 }

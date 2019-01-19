@@ -28,13 +28,20 @@
                     </Trigger>
 
                     <Trigger Property="IsPressed" Value="true">
-                    
+
                         <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
                                 Path=PressedBackground}" TargetName="border" />
                     </Trigger>
                     <Trigger Property="IsChecked" Value="true">
-                        <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
-                                Path=PressedBackground}" TargetName="border" />
+                        <Setter Property="Background" TargetName="border">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="Image/确认按钮.png"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Opacity" TargetName="border" Value="0.4"/>
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
@@ -59,11 +66,11 @@
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid  Width="1650" Height="600"  Focusable="False" >
+    <Grid  Width="1700" Height="500"  Focusable="False" >
         <Border Background="LightGray" Grid.ColumnSpan="15" Grid.RowSpan="15" CornerRadius="10"/>
         <Grid x:Name="grid_center" ButtonBase.Click="Grid_Click" Margin="20,30,20,20">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="0"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -113,7 +120,7 @@
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="0"   Content="Esc" Tag="23"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="`"  Tag="50" ShiftValue="~"/>
+                <local:FuncButtonControl IsEnabled="False" Grid.Row="1" Grid.Column="1" Content="`"  Tag="96" ShiftValue="~"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="2"   Content="1" Tag="49" ShiftValue="!"/>
 
@@ -124,7 +131,6 @@
                 <local:FuncButtonControl Grid.Row="2" Grid.Column="5"   Content="4"  Tag="52"  ShiftValue="$"/>
 
                 <local:FuncButtonControl Grid.Row="2" Grid.Column="6"   Content="5" Tag="53"  ShiftValue="%"/>
-
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="7"   Content="6"  Tag="54"  ShiftValue="^"/>
 
@@ -138,11 +144,11 @@
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="12"   Content="-" Tag="189"  ShiftValue="_"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="13" Content="=" Tag="49"  ShiftValue="+"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="13" Content="=" Tag="61"  ShiftValue="+"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="190"  HorizontalAlignment="Right" Content="      " Tag="8"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="210"  HorizontalAlignment="Right" Content="      " Tag="8"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="180" Content="      " HorizontalAlignment="Right" Tag="8" IsHitTestVisible="False">
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="210" Content="      " HorizontalAlignment="Right" Tag="8" IsHitTestVisible="False">
                     <Button.Background>
                         <ImageBrush ImageSource="Image/Backspace.png" Stretch="None" />
                     </Button.Background>
@@ -169,9 +175,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-
-
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="0" Width="190" HorizontalAlignment="Left" Content="Tab" Tag="9"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="0" Width="200" HorizontalAlignment="Left" Content="Tab" Tag="9"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="q"  Tag="81"/>
 
@@ -193,11 +197,11 @@
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="10"   Content="p" Tag="80"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="[" Tag="219"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="[" Tag="219"  ShiftValue=" {"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="12"   Content="]" Tag="221"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="12"   Content="]" Tag="221"  ShiftValue="}"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="13"   Content="\" Tag="226"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="13"   Content="\" Tag="226"  ShiftValue="|"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="14"   Content="Del" Tag="46"/>
             </Grid>
@@ -223,7 +227,7 @@
                                          Grid.Row="1" 
                                          IsCheckedControl="True" 
                                          Grid.Column="0" 
-                                         Width="250" 
+                                         Width="260" 
                                          HorizontalAlignment="Left" 
                                          Content="Caps" Tag="20"/>
 
@@ -245,16 +249,17 @@
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="8"   Content="k" Tag="75"/>
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="9"   Content="l" Tag="76"/>
-                <local:FuncButtonControl Grid.Row="3" Grid.Column="10"   Content=";"  />
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="'" Tag="8"/>
+                <local:FuncButtonControl Grid.Row="3" Grid.Column="10"   Content=";" Tag="59"  ShiftValue=":"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14" Width="190" HorizontalAlignment="Right" Content="Enter" Tag="13"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="&apos;" Tag="8"  ShiftValue="&quot;"/>
+
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="14" Width="210" HorizontalAlignment="Right" Content="Enter" Tag="13"/>
             </Grid>
 
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2.5*"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -269,7 +274,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <local:FuncButtonControl x:Name="btn_shift" Click="Btn_Click" Grid.Row="1" Grid.Column="0" Width="290" HorizontalAlignment="Left"  Content="Shift" Tag="160"/>
+                <local:FuncButtonControl x:Name="btn_shift" Click="Btn_Click" Grid.Row="1" Grid.Column="0" Width="260" HorizontalAlignment="Left"  Content="Shift" Tag="160"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="z"  Tag="90"/>
 
@@ -287,15 +292,16 @@
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="7"   Content="m"  Tag="77"/>
 
-                <local:FuncButtonControl Grid.Row="3" Grid.Column="8"   Content="," Tag="188" />
+                <local:FuncButtonControl Grid.Row="3" Grid.Column="8"   Content="," Tag="219"   ShiftValue="&lt;" />
+                <!--188-->
 
-                <local:FuncButtonControl Grid.Row="3" Grid.Column="9"   Content="." Tag="110" />
+                <local:FuncButtonControl Grid.Row="3" Grid.Column="9"   Content="." Tag="119"  ShiftValue="&gt;" />
 
-                <local:FuncButtonControl Grid.Row="3" Grid.Column="10"   Content="/" Tag="111" />
+                <local:FuncButtonControl Grid.Row="3" Grid.Column="10"   Content="/" Tag="111"  ShiftValue="?" />
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="∧" Tag="38"/>
 
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="1" Grid.Column="14" Width="190"  Content="Shift" HorizontalAlignment="Right" Tag="161"/>
+                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="1" Grid.Column="14"  Width="210"  Content="Shift" HorizontalAlignment="Right" Tag="161"/>
             </Grid>
 
             <Grid Grid.Row="5 ">
@@ -315,18 +321,18 @@
 
 
 
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="1" Grid.Column="0"  Content="Fn" Tag="49"/>
+                <local:FuncButtonControl IsEnabled="False"  IsCheckedControl="True" Grid.Row="1" Grid.Column="0"  Content="Fn" Tag="49"/>
 
                 <local:FuncButtonControl  Click="Btn_Click"  IsCheckedControl="True" Grid.Row="1" Grid.Column="1" Content="Ctrl"  Tag="162"/>
 
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="1" Grid.Column="2"   Content="Win" Tag="91"/>
+                <local:FuncButtonControl Click="Btn_Click" IsEnabled="False"  IsCheckedControl="True" Grid.Row="1" Grid.Column="2"   Content="Win" Tag="91"/>
 
                 <local:FuncButtonControl  Click="Btn_Click" IsCheckedControl="True" Grid.Row="1" Grid.Column="3"   Content="Alt" Tag="164" />
 
-                <local:FuncButtonControl Grid.Row="2" Grid.Column="4" Width="530"  Content="Space" Tag="32"/>
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="2" Grid.Column="5"   Content="Alt"  Tag="165"/>
+                <local:FuncButtonControl Grid.Row="2" Grid.Column="4" Width="570"  Content="Space" Tag="32"/>
+                <local:FuncButtonControl Click="Btn_Click"  IsCheckedControl="True" Grid.Row="2" Grid.Column="5"   Content="Alt"  Tag="165"/>
 
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="2" Grid.Column="6"   Content="Ctrl" Tag="163" />
+                <local:FuncButtonControl Click="Btn_Click"  IsCheckedControl="True" Grid.Row="2" Grid.Column="6"   Content="Ctrl" Tag="163" />
 
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="7"   Content="&lt;"  Tag="37"/>
@@ -335,8 +341,21 @@
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="9"   Content="&gt;" Tag="39" />
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"   Content="右键" Tag="2"/>
+                <local:FuncButtonControl IsEnabled="False" Grid.Row="1" Grid.Column="14"   Content="右键" Tag="2"/>
             </Grid>
         </Grid>
+
+        <TextBlock Background="Transparent"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-26" MouseDown="TextBlock_MouseDown">
+            <Grid>
+                <Ellipse Width="60" Height="60" Stroke="LightGray">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="Red" Opacity="0.5"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Text="×" HorizontalAlignment="Center" Foreground="LightGray" Height="47" VerticalAlignment="Center" FontSize="40" Margin="10,-2,10,5"/>
+            </Grid>
+        </TextBlock>
     </Grid>
+
+
 </UserControl>
