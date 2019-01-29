@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HeBianGu.Product.UserControls.SystemKeyBoard"
         mc:Ignorable="d" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" MouseDown="Window_MouseDown" Topmost="True"
-        Title="MainWindow" Height="300" Width="1000">
+        Title="MainWindow" Height="300" Width="1000">                                                    
     <Grid>
         <Viewbox Focusable="False" Margin="20">
             <local:KeyBoardControl Focusable="False" 
