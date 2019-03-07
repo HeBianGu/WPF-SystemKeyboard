@@ -67,7 +67,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid  Width="1700" Height="500"  Focusable="False" >
-        <Border Background="LightGray" Grid.ColumnSpan="15" Grid.RowSpan="15" CornerRadius="10"/>
+        <Border Background="LightGray" Opacity="0.7" Grid.ColumnSpan="15" Grid.RowSpan="15" CornerRadius="10"/>
         <Grid x:Name="grid_center" ButtonBase.Click="Grid_Click" Margin="20,30,20,20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>

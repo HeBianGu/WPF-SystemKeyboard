@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HeBianGu.Product.UserControls.SystemKeyBoard"
-        mc:Ignorable="d" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" WindowStyle="None" Background="Transparent"
         AllowsTransparency="True" MouseDown="Window_MouseDown" Topmost="True"
-        Title="MainWindow" Height="300" Width="1000">                                                    
+        Title="MainWindow" Height="300" Width="1000">
+
+    <Window.Resources>
+        <!--消息弹窗加载 由下到上 +震动-->
+        <Storyboard x:Key="Story_Load">
+            <DoubleAnimation From="300" To="0" Duration="0:0:0.5" BeginTime="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform/>
+            <SkewTransform/>
+            <RotateTransform/>
+            <TranslateTransform/>
+        </TransformGroup>
+    </Window.RenderTransform>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Story_Load}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Viewbox Focusable="False" Margin="20">
             <local:KeyBoardControl Focusable="False" 

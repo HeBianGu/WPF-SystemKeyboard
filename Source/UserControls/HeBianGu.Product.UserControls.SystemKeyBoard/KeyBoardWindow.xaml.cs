@@ -25,6 +25,28 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
         {
             InitializeComponent();
 
+            double x = SystemParameters.WorkArea.Width;//得到屏幕工作区域宽度
+            double y = SystemParameters.WorkArea.Height;//得到屏幕工作区域高度
+            double x1 = SystemParameters.PrimaryScreenWidth;//得到屏幕整体宽度
+            double y1 = SystemParameters.PrimaryScreenHeight;//得到屏幕整体高度
+
+            //this.WindowState = WindowState.Normal;
+
+            double param = y1 / 3;
+
+            this.Width = x1;//设置窗体宽度
+
+            this.Height = param;//设置窗体高度
+
+            double screeHeight = SystemParameters.FullPrimaryScreenHeight;
+
+            double screeWidth = SystemParameters.FullPrimaryScreenWidth;
+
+            this.Top = y1 - this.Height;
+
+            this.Left = (x1 - this.Width) / 2;
+
+
             this.Loaded += KeyBoardWindow_Loaded;
         }
 
