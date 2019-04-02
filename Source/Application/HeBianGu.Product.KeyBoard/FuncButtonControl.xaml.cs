@@ -27,6 +27,26 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
         #region - 依赖属性 -
 
+
+        public string CheckedText
+        {
+            get { return (string)GetValue(CheckedTextProperty); }
+            set { SetValue(CheckedTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CheckedTextProperty =
+            DependencyProperty.Register("CheckedText", typeof(string), typeof(FuncButtonControl), new PropertyMetadata(default(string), (d, e) =>
+             {
+                 FuncButtonControl control = d as FuncButtonControl;
+
+                 if (control == null) return;
+
+                 string config = e.NewValue as string;
+
+             }));
+
+
         public static readonly DependencyProperty PressedBackgroundProperty =
             DependencyProperty.Register("PressedBackground", typeof(Brush), typeof(FuncButtonControl), new PropertyMetadata(Brushes.DarkBlue));
         /// <summary> 鼠标按下背景样式 </summary>

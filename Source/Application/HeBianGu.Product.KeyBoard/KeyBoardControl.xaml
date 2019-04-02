@@ -14,7 +14,7 @@
                         <Grid>
                             <ContentPresenter  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                            <TextBlock Text="{TemplateBinding ShiftValue}" 
+                            <TextBlock x:Name="txt" Text="{TemplateBinding ShiftValue}" 
                                        Foreground="{TemplateBinding Foreground}"
                                        FontSize="22"
                                        HorizontalAlignment="Right" Margin="20,5"
@@ -35,18 +35,23 @@
                     <Trigger Property="IsChecked" Value="true">
                         <Setter Property="Background" TargetName="border">
                             <Setter.Value>
-                                <ImageBrush ImageSource="Image/确认按钮.png"/>
+                                <ImageBrush ImageSource="Image/按下2.5.png"/>
                             </Setter.Value>
                         </Setter>
-                    </Trigger>
+
+                        <Setter  Property="Text" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                Path=CheckedText}" TargetName="txt"/>
+
+                        <!--<Setter Property="Opacity" TargetName="border" Value="0.4"/>-->
+                    </Trigger> 
 
                     <Trigger Property="IsEnabled" Value="false">
-                        <Setter Property="Opacity" TargetName="border" Value="0.4"/>
+                        <Setter Property="Opacity" TargetName="border" Value="0.6"/>
                     </Trigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>
 
-            <Style TargetType="{x:Type local:FuncButtonControl}">
+            <Style x:Key="Resource.Style.FuncButton.Base" TargetType="{x:Type local:FuncButtonControl}">
                 <Setter Property="Template" Value="{StaticResource Resource.Button.InputButton}"/>
                 <Setter Property="Height" Value="80"/>
                 <Setter Property="Width" Value="100"/>
@@ -55,18 +60,64 @@
                 <Setter Property="Focusable" Value="False" />
                 <Setter Property="PressedBackground">
                     <Setter.Value>
-                        <ImageBrush ImageSource="Image/按下.png" />
+                        <ImageBrush ImageSource="Image/按下1.png" />
                     </Setter.Value>
                 </Setter>
                 <Setter Property="Background">
                     <Setter.Value>
-                        <ImageBrush ImageSource="Image/数字按钮.png" />
+                        <ImageBrush ImageSource="Image/按钮1.png" />
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <Style x:Key="Resource.Style.FuncButton.Lenght.2" TargetType="{x:Type local:FuncButtonControl}" BasedOn="{StaticResource Resource.Style.FuncButton.Base}">
+                <Setter Property="Width" Value="210"/>
+                <Setter Property="PressedBackground">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按下2.png" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按钮2.png" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Resource.Style.FuncButton.Lenght.2.5" TargetType="{x:Type local:FuncButtonControl}" BasedOn="{StaticResource Resource.Style.FuncButton.Base}">
+                <Setter Property="Width" Value="270"/>
+                <Setter Property="PressedBackground">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按下2.5.png" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按钮2.5.png" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Resource.Style.FuncButton.Lenght.5.5" TargetType="{x:Type local:FuncButtonControl}" BasedOn="{StaticResource Resource.Style.FuncButton.Base}">
+                <Setter Property="Width" Value="540"/>
+                <Setter Property="PressedBackground">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按下5.5.png" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Image/按钮5.5.png" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <Style TargetType="local:FuncButtonControl" BasedOn="{StaticResource Resource.Style.FuncButton.Base}"/>
+
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid  Width="1700" Height="500"  Focusable="False" >
+    <Grid  Width="1800" Height="500"  Focusable="False" >
         <Border Background="LightGray" Opacity="0.7" Grid.ColumnSpan="15" Grid.RowSpan="15" CornerRadius="10"/>
         <Grid x:Name="grid_center" ButtonBase.Click="Grid_Click" Margin="20,30,20,20">
             <Grid.RowDefinitions>
@@ -146,9 +197,9 @@
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="13" Content="=" Tag="61"  ShiftValue="+"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="210"  HorizontalAlignment="Right" Content="      " Tag="8"/>
+                <local:FuncButtonControl Style="{StaticResource Resource.Style.FuncButton.Lenght.2}" Grid.Row="1" Grid.Column="14" HorizontalAlignment="Right" Content="      " Tag="8"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14"  Width="210" Content="      " HorizontalAlignment="Right" Tag="8" IsHitTestVisible="False">
+                <local:FuncButtonControl Style="{StaticResource Resource.Style.FuncButton.Lenght.2}" Grid.Row="1" Grid.Column="14" Content="      " HorizontalAlignment="Right" Tag="8" IsHitTestVisible="False">
                     <Button.Background>
                         <ImageBrush ImageSource="Image/Backspace.png" Stretch="None" />
                     </Button.Background>
@@ -175,7 +226,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="0" Width="200" HorizontalAlignment="Left" Content="Tab" Tag="9"/>
+                <local:FuncButtonControl Grid.Row="1" Grid.Column="0" Style="{StaticResource Resource.Style.FuncButton.Lenght.2}" Content="Tab" Tag="9"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="q"  Tag="81"/>
 
@@ -220,16 +271,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2.5*"/>
                 </Grid.ColumnDefinitions>
 
                 <local:FuncButtonControl x:Name="btn_caps" Click="btn_caps_Click" 
-                                         Grid.Row="1" 
+                                         Grid.Row="1" Style="{StaticResource Resource.Style.FuncButton.Lenght.2.5}"
                                          IsCheckedControl="True" 
                                          Grid.Column="0" 
-                                         Width="260" 
                                          HorizontalAlignment="Left" 
-                                         Content="Caps" Tag="20"/>
+                                         Content="Caps" Tag="20">
+                </local:FuncButtonControl>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="a"  Tag="65"/>
 
@@ -254,7 +305,7 @@
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="&apos;" Tag="8"  ShiftValue="&quot;"/>
 
-                <local:FuncButtonControl Grid.Row="1" Grid.Column="14" Width="210" HorizontalAlignment="Right" Content="Enter" Tag="13"/>
+                <local:FuncButtonControl Style="{StaticResource Resource.Style.FuncButton.Lenght.2.5}" Grid.Row="1" Grid.Column="14" HorizontalAlignment="Right" Content="Enter" Tag="13"/>
             </Grid>
 
             <Grid Grid.Row="4">
@@ -271,10 +322,15 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <local:FuncButtonControl x:Name="btn_shift" Click="Btn_Click" Grid.Row="1" Grid.Column="0" Width="260" HorizontalAlignment="Left"  Content="Shift" Tag="160"/>
+                <local:FuncButtonControl Style="{StaticResource Resource.Style.FuncButton.Lenght.2.5}" 
+                                         x:Name="btn_shift" Click="Btn_Click" 
+                                         Grid.Row="1" 
+                                         Grid.Column="0" 
+                                         HorizontalAlignment="Left" 
+                                         Content="Shift" Tag="160"/>
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="1" Content="z"  Tag="90"/>
 
@@ -301,7 +357,7 @@
 
                 <local:FuncButtonControl Grid.Row="1" Grid.Column="11" Content="∧" Tag="38"/>
 
-                <local:FuncButtonControl  IsCheckedControl="True" Grid.Row="1" Grid.Column="14"  Width="210"  Content="Shift" HorizontalAlignment="Right" Tag="161"/>
+                <local:FuncButtonControl Style="{StaticResource Resource.Style.FuncButton.Lenght.2.5}" IsCheckedControl="True" Grid.Row="1" Grid.Column="14" Content="Shift" HorizontalAlignment="Right" Tag="161"/>
             </Grid>
 
             <Grid Grid.Row="5 ">
@@ -310,7 +366,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="5.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -329,7 +386,9 @@
 
                 <local:FuncButtonControl  Click="Btn_Click" IsCheckedControl="True" Grid.Row="1" Grid.Column="3"   Content="Alt" Tag="164" />
 
-                <local:FuncButtonControl Grid.Row="2" Grid.Column="4" Width="570"  Content="Space" Tag="32"/>
+                <local:FuncButtonControl Grid.Row="2" Style="{StaticResource Resource.Style.FuncButton.Lenght.5.5}" Grid.Column="4" Content="Space" Tag="32"/>
+                
+                
                 <local:FuncButtonControl Click="Btn_Click"  IsCheckedControl="True" Grid.Row="2" Grid.Column="5"   Content="Alt"  Tag="165"/>
 
                 <local:FuncButtonControl Click="Btn_Click"  IsCheckedControl="True" Grid.Row="2" Grid.Column="6"   Content="Ctrl" Tag="163" />
@@ -341,7 +400,7 @@
 
                 <local:FuncButtonControl Grid.Row="3" Grid.Column="9"   Content="&gt;" Tag="39" />
 
-                <local:FuncButtonControl IsEnabled="False" Grid.Row="1" Grid.Column="14"   Content="右键" Tag="2"/>
+                <local:FuncButtonControl IsEnabled="False" Style="{StaticResource Resource.Style.FuncButton.Lenght.2}" Grid.Row="1" Grid.Column="10" Grid.ColumnSpan="2"   Content="右键" Tag="2"/>
             </Grid>
         </Grid>
 

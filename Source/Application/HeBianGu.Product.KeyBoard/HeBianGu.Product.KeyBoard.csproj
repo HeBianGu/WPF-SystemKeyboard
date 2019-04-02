@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CD00697-AB32-4506-ACDA-122C6F95F31C}</ProjectGuid>
-    <OutputType>library</OutputType>
-    <RootNamespace>HeBianGu.Product.UserControls.SystemKeyBoard</RootNamespace>
-    <AssemblyName>HeBianGu.Product.UserControls.SystemKeyBoard</AssemblyName>
+    <ProjectGuid>{FE7393F0-6487-430C-9E70-133F2C6ABBD6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HeBianGu.Product.KeyBoard</RootNamespace>
+    <AssemblyName>SystemKeyBoard</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -15,6 +15,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,16 +25,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\Product\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\KeyBoard.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -48,22 +54,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="FuncButtonControl.xaml">
+    <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="InputNumControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="InputNumWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="KeyBoardControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="FuncButtonControl.xaml.cs">
       <DependentUpon>FuncButtonControl.xaml</DependentUpon>
     </Compile>
@@ -80,12 +80,6 @@
       <DependentUpon>KeyBoardWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="KeyHelper.cs" />
-    <Page Include="KeyBoardWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,10 +103,71 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="FuncButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InputNumControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InputNumWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyBoardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyBoardWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image\Backspace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按钮1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按钮2.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按钮2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按钮5.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按钮间距.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image\按下.png" />
-    <Resource Include="Image\数字按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按下1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按下2.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按下2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\按下5.5.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image\确认按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\数字按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KeyBoard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

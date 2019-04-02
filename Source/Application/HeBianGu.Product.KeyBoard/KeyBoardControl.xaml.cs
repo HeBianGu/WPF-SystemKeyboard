@@ -32,6 +32,18 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
             this.RefreshCaps();
         }
 
+        void RefreshCapsText()
+        {
+            if (this.btn_caps.IsChecked)
+            {
+                this.btn_caps.Content = "大写";
+            }
+            else
+            {
+                this.btn_caps.Content = "小写";
+            }
+        }
+
         private void Grid_Click(object sender, RoutedEventArgs e)
         {
             Button button = e.OriginalSource as Button;
@@ -154,6 +166,8 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
         void RefreshCaps()
         {
+
+
             var btns = FindVisualChild<FuncButtonControl>(this.grid_center);
 
             foreach (var btn in btns)
@@ -165,6 +179,8 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
                 btn.Content = this.btn_caps.IsChecked ? btn.Content.ToString().ToUpper() : btn.Content.ToString().ToLower();
 
             }
+
+            this.RefreshCapsText();
 
         }
 
@@ -197,7 +213,7 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
             KeyHelper.OnKeyDown(b);
 
-            btn.IsChecked = !btn.IsChecked;
+            btn.IsChecked = !btn.IsChecked; 
 
             this.RefreshCaps();
         }

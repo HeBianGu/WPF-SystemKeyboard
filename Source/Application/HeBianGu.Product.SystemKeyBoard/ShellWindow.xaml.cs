@@ -27,6 +27,8 @@ namespace HeBianGu.Product.SystemKeyBoard
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+            
             KeyBoardWindow.ShowDefault();
         }
 

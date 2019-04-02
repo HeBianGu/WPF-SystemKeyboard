@@ -89,16 +89,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UserControls\HeBianGu.Product.UserControls.SystemKeyBoard\HeBianGu.Product.UserControls.SystemKeyBoard.csproj">
-      <Project>{0cd00697-ab32-4506-acda-122c6f95f31c}</Project>
-      <Name>HeBianGu.Product.UserControls.SystemKeyBoard</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="ShellWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeBianGu.Product.KeyBoard\HeBianGu.Product.KeyBoard.csproj">
+      <Project>{fe7393f0-6487-430c-9e70-133f2c6abbd6}</Project>
+      <Name>HeBianGu.Product.KeyBoard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

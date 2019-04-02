@@ -21,7 +21,7 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
     /// </summary>
     public partial class KeyBoardWindow : Window
     {
-         KeyBoardWindow()
+        KeyBoardWindow()
         {
             InitializeComponent();
 
@@ -52,9 +52,16 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
 
         public static KeyBoardWindow Instance = new KeyBoardWindow();
 
-        public static void ShowDefault()
+
+        Action _closeClick;
+        public static void ShowDefault(Action closeClick=null)
         {
+
+            Instance._closeClick = closeClick;
+
             Instance.Show();
+
+
         }
 
         public static void HideDefault()
@@ -81,12 +88,19 @@ namespace HeBianGu.Product.UserControls.SystemKeyBoard
         private void KeyBoardControl_CancelClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
+
+            if (_closeClick != null)
+            {
+                _closeClick();
+            }
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
+
 
 
         [DllImport("user32.dll")]
